@@ -1,0 +1,53 @@
+{{ define "contenu"}}
+<div class="container-contenu">
+    <div class="scrollable-contenu" id="scrollable">
+
+        <form method="post">
+            <button class="voirplus" id="morePosts"> SEE MORE </button>
+        </form>
+
+
+
+
+
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="commentcontainer" id="commentcontainer">
+            <div class="title-comment" id="commentTitle">
+                Title
+            </div>
+            <div class="contenu-comments">
+                <div class="main-section">
+                    Comments
+                </div>
+                <div class="commentsmany" id="commentsmany">
+                </div>
+            </div>
+            <form method="post">
+                <br>
+                <br>
+                <div class="message">
+                    <input type="text" placeholder="Type your message ..." class="messInput">
+                </div>
+                <br>
+                <div class="submitDiv" id="submitDiv">
+                    <button class="subbutton">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        function popupFunc() {
+            let submitbutton = document.querySelector('#submitDiv');
+            let popupComment = document.getElementById('overlay');
+            popupComment.style.display = 'block';
+            submitbutton.addEventListener('click', function (event) {
+                event.preventDefault();
+                popupComment.style.display = 'none';
+            });
+        }
+    </script>
+</div>
+
+{{ end}}
